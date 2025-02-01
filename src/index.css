@@ -3,15 +3,15 @@
 @theme {
   /* Custom Breakpoint */
   --breakpoint-*: initial;
-  --breakpoint-xs: 20rem;
-  --breakpoint-sm: 23rem;
-  --breakpoint-md: 26rem;
-  --breakpoint-lg: 36rem;
-  --breakpoint-xl: 42rem;
-  --breakpoint-2xl: 48rem;
-  --breakpoint-3xl: 64rem;
-  --breakpoint-4xl: 80rem;
-  --breakpoint-5xl: 90rem;
+  --breakpoint-xs: 23rem;
+  --breakpoint-sm: 26rem;
+  --breakpoint-md: 36rem;
+  --breakpoint-lg: 42rem;
+  --breakpoint-xl: 48rem;
+  --breakpoint-2xl: 64rem;
+  --breakpoint-3xl: 80rem;
+  --breakpoint-4xl: 90rem;
+  --breakpoint-5xl: 96rem;
   /* Custom Colors */
   --color-*: initial;
   --color-geraldine-50: hsl(0, 100%, 97%);
@@ -69,8 +69,28 @@
   --color-lavender-gray-800: hsl(255, 19%, 42%);
   --color-lavender-gray-900: hsl(253, 18%, 35%);
   --color-lavender-gray-950: hsl(253, 20%, 23%);
+  --color-white-50: hsl(0, 0%, 100%);
+  --color-white-100: hsl(0, 0%, 94%);
+  --color-white-200: hsl(0, 0%, 86%);
+  --color-white-300: hsl(0, 0%, 74%);
+  --color-white-400: hsl(0, 0%, 60%);
+  --color-white-500: hsl(0, 0%, 49%);
+  --color-white-600: hsl(0, 0%, 40%);
+  --color-white-700: hsl(0, 0%, 32%);
+  --color-white-800: hsl(0, 0%, 27%);
+  --color-white-900: hsl(0, 0%, 24%);
+  --color-white-950: hsl(0, 0%, 16%);
   /* Custom Font */
   --font-poppins: "Poppins", "ui-sans-serif", "system-ui", "sans-serif";
+  /* Custom Box Shadow */
+  --shadow-custom: 0px 8px 0px 0px rgba(0, 0, 0, 0.15);
+}
+
+@layer components {
+  .block-shadow {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-custom);
+  }
 }
 
 @font-face {
@@ -111,5 +131,5 @@ body {
   background-image: url("./assets/media/bg-intro-mobile.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top center;
+  background-position: center center;
 }
