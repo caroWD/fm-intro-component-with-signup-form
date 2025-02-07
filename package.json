@@ -1,9 +1,12 @@
 {
   "name": "fm-intro-component-with-signup-form",
+  "homepage": "https://carowd.github.io/fm-intro-component-with-signup-form",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "nom run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
