@@ -1,68 +1,126 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+@import "tailwindcss";
+
+@theme {
+  /* Custom Breakpoint */
+  --breakpoint-*: initial;
+  --breakpoint-xs: 23rem;
+  --breakpoint-sm: 26rem;
+  --breakpoint-md: 36rem;
+  --breakpoint-lg: 42rem;
+  --breakpoint-xl: 48rem;
+  --breakpoint-2xl: 64rem;
+  --breakpoint-3xl: 80rem;
+  --breakpoint-4xl: 90rem;
+  --breakpoint-5xl: 96rem;
+  /* Custom Colors */
+  --color-*: initial;
+  --color-geraldine-50: hsl(0, 100%, 97%);
+  --color-geraldine-100: hsl(0, 100%, 94%);
+  --color-geraldine-200: hsl(0, 100%, 89%);
+  --color-geraldine-300: hsl(0, 100%, 81%);
+  --color-geraldine-400: hsl(0, 100%, 74%);
+  --color-geraldine-500: hsl(0, 93%, 60%);
+  --color-geraldine-600: hsl(0, 79%, 51%);
+  --color-geraldine-700: hsl(0, 81%, 42%);
+  --color-geraldine-800: hsl(0, 78%, 35%);
+  --color-geraldine-900: hsl(0, 69%, 31%);
+  --color-geraldine-950: hsl(0, 82%, 15%);
+  --color-shamrock-50: hsl(148, 71%, 96%);
+  --color-shamrock-100: hsl(144, 73%, 90%);
+  --color-shamrock-200: hsl(148, 70%, 80%);
+  --color-shamrock-300: hsl(152, 66%, 67%);
+  --color-shamrock-400: hsl(154, 59%, 51%);
+  --color-shamrock-500: hsl(156, 77%, 39%);
+  --color-shamrock-600: hsl(157, 86%, 30%);
+  --color-shamrock-700: hsl(159, 85%, 24%);
+  --color-shamrock-800: hsl(159, 80%, 20%);
+  --color-shamrock-900: hsl(161, 79%, 16%);
+  --color-shamrock-950: hsl(161, 83%, 9%);
+  --color-blue-violet-50: hsl(233, 53%, 97%);
+  --color-blue-violet-100: hsl(229, 55%, 94%);
+  --color-blue-violet-200: hsl(232, 54%, 89%);
+  --color-blue-violet-300: hsl(233, 53%, 82%);
+  --color-blue-violet-400: hsl(238, 49%, 74%);
+  --color-blue-violet-500: hsl(243, 46%, 67%);
+  --color-blue-violet-600: hsl(247, 41%, 59%);
+  --color-blue-violet-700: hsl(248, 32%, 49%);
+  --color-blue-violet-800: hsl(248, 30%, 41%);
+  --color-blue-violet-900: hsl(245, 26%, 34%);
+  --color-blue-violet-950: hsl(247, 25%, 20%);
+  --color-ship-gray-50: hsl(240, 7%, 97%);
+  --color-ship-gray-100: hsl(255, 12%, 94%);
+  --color-ship-gray-200: hsl(249, 10%, 86%);
+  --color-ship-gray-300: hsl(245, 10%, 74%);
+  --color-ship-gray-400: hsl(246, 10%, 60%);
+  --color-ship-gray-500: hsl(248, 9%, 48%);
+  --color-ship-gray-600: hsl(249, 10%, 39%);
+  --color-ship-gray-700: hsl(250, 11%, 32%);
+  --color-ship-gray-800: hsl(249, 10%, 26%);
+  --color-ship-gray-900: hsl(252, 8%, 24%);
+  --color-ship-gray-950: hsl(257, 9%, 16%);
+  --color-lavender-gray-50: hsl(240, 33%, 98%);
+  --color-lavender-gray-100: hsl(240, 22%, 95%);
+  --color-lavender-gray-200: hsl(240, 24%, 92%);
+  --color-lavender-gray-300: hsl(243, 26%, 85%);
+  --color-lavender-gray-400: hsl(246, 25%, 77%);
+  --color-lavender-gray-500: hsl(250, 24%, 66%);
+  --color-lavender-gray-600: hsl(253, 23%, 58%);
+  --color-lavender-gray-700: hsl(254, 19%, 50%);
+  --color-lavender-gray-800: hsl(255, 19%, 42%);
+  --color-lavender-gray-900: hsl(253, 18%, 35%);
+  --color-lavender-gray-950: hsl(253, 20%, 23%);
+  --color-white-50: hsl(0, 0%, 100%);
+  --color-white-100: hsl(0, 0%, 94%);
+  --color-white-200: hsl(0, 0%, 86%);
+  --color-white-300: hsl(0, 0%, 74%);
+  --color-white-400: hsl(0, 0%, 60%);
+  --color-white-500: hsl(0, 0%, 49%);
+  --color-white-600: hsl(0, 0%, 40%);
+  --color-white-700: hsl(0, 0%, 32%);
+  --color-white-800: hsl(0, 0%, 27%);
+  --color-white-900: hsl(0, 0%, 24%);
+  --color-white-950: hsl(0, 0%, 16%);
+  /* Custom Font */
+  --font-poppins: "Poppins", "ui-sans-serif", "system-ui", "sans-serif";
+  /* Custom Box Shadow */
+  --shadow-custom: 0px 8px 0px 0px rgba(0, 0, 0, 0.15);
+}
+
+@layer components {
+  .block-shadow {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-custom);
+  }
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-display: swap;
+  src: url("./assets/fonts/Poppins-Regular.woff2") format("woff2");
 }
 
-a {
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  font-display: swap;
+  src: url("./assets/fonts/Poppins-Medium.woff2") format("woff2");
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./assets/fonts/Poppins-SemiBold.woff2") format("woff2");
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./assets/fonts/Poppins-Bold.woff2") format("woff2");
 }
