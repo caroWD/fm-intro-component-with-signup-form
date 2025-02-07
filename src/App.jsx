@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div
-      className="px-6"
+      className="px-6 mx-auto flex flex-col justify-center xl:max-w-lg xl:h-dvh 2xl:max-w-6xl"
     >
       <LoginSection
         title={title}

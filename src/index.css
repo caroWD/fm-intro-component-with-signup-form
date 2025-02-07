@@ -124,12 +124,3 @@
   font-display: swap;
   src: url("./assets/fonts/Poppins-Bold.woff2") format("woff2");
 }
-
-body {
-  font-family: var(--font-poppins);
-  background: var(--color-geraldine-400);
-  background-image: url("./assets/media/bg-intro-mobile.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
